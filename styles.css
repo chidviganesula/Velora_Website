@@ -1,0 +1,407 @@
+body, html {
+    margin: 0;
+    padding: 0; /* Removes unintended global padding */
+    overflow-x: hidden;
+    box-sizing: border-box; 
+}
+
+.header-content{
+    position: fixed;
+    height: 20px;
+    top: 0px; 
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: white;
+    padding: 20px 10px;
+    z-index: 2; 
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    top:3%;
+    right:5%;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+}
+
+.navbar li{
+    color:gray;
+    margin:0 15px;
+}
+
+.navbar a{
+    color:gray;
+    text-decoration: none;
+    font-size: 22px; 
+    padding: 8px 15px;
+}
+
+.header-content h1{
+    top:3%;
+    left:20%;
+    font-family:sans-serif;
+    color: black;
+    font-size: 28px;
+    padding: 0 20px;
+}
+
+.header-content button{
+    color: gray;
+    padding: 8px 15px; /* Same padding as navbar items */
+    border-radius: 26px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 15px; 
+}
+
+.header-content button a{
+    color:gray;
+    text-decoration: none;
+}
+
+
+button:hover {
+    background-color: lightgray; /* Lighter background on hover */
+    transform: scale(1.05); /* Slightly increase size */
+}
+
+.main-page{
+    padding: 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 800px;
+}
+
+.left-div{
+    float: left;
+    width:45%;
+    height: 100%;
+}
+
+.left-div img{
+    width: 100%;
+    height: 100%;
+    z-index:1;
+}
+
+.right-div{
+    width: 55%;
+    padding: 40px; 
+    float:right;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(239, 232, 223);
+}
+
+.right-div h1 {
+    display: flex;
+    width: 20%;
+    height: 250px;
+    font-size: 50px;
+    font-family: sans-serif;
+    margin-left: 30px;
+}
+
+.right-div p {
+    display: flex;
+    width:60%;
+    height: 150px;
+    font-size: 19px;
+    margin-left: 30px;
+}
+
+.right-div button {
+    background-color: black;
+    width: 40%;
+    height:50px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 30px; 
+}
+
+.right-div button a{
+    color:white;
+    text-decoration: none;
+}
+
+
+.right-div button:hover {
+    background-color: black;
+}
+
+.collection{
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.collection h1{
+    text-align: center;
+}
+
+.collection p{
+    text-align: center;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.product-item{
+    transition: transform 0.6s ease-in-out;
+    text-align: center;
+    width:30%;
+}
+
+.product-item img{
+    width: 320px;
+    height: 350px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center center;
+}
+
+.product-item:hover img {
+    transform: scale(0.9); /* Slight zoom-in effect */
+    opacity: 0.9; /* Optional: Slight fade effect to make it more subtle */
+}
+
+.product-heading {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-description {
+    font-size: 17px;
+    color:gray;
+    margin-top: 10px;
+}
+
+.video {
+    display: flex;
+    padding-left: 10%;
+    padding-top: 20px;
+    width: 100%;
+    height: 500px; 
+    box-sizing: border-box;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.video_left{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.video_left h1 {
+    font-size: 40px;
+    font-family: sans-serif;
+}
+
+.video_left p{
+    font-size: 20px;
+    font-family: sans-serif;
+    width:72%;
+    height: 150px;
+}
+
+.video_right {
+    width: 45%;
+}
+
+.video_right video {
+    padding-top: 20px;
+    width: 70%; 
+    height: 100%;
+    border: none;
+    outline: none;
+    object-fit: cover;
+}
+
+.btn{
+    display: flex;
+    gap:20px;
+    padding:0;
+}
+
+#btn1{
+    background-color:rgb(239, 231, 223);
+    color: black;
+    padding: 10px 10px;
+    border-radius: 26px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 20px;  
+    border: none; 
+    outline: none;
+}
+
+#btn2{
+    background-color: black;
+    color: white;
+    padding: 12px 12px;
+    border-radius: 26px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 15px;
+    border: none; 
+    outline: none;
+}
+
+#btn1 button:hover {
+    background-color: lightgray; /* Lighter background on hover */
+    transform: scale(1.05); /* Slightly increase size */
+}
+
+button:hover {
+    background-color: lightgray; /* Lighter background on hover */
+    transform: scale(1.05); /* Slightly increase size */
+}
+
+.carousel-container {
+    position: relative;
+    padding-top: 30px;
+    width: 70%;
+    height: 750px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-container h1{
+    font-size: 40px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.carousel-container p{
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.carousel {
+    padding-top: 30px;
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images {
+    display: flex;
+    gap:2rem;
+}
+
+.carousel-images img {
+    width: 320px;
+    height: 350px;
+    transform: scale(0.8); /* Smaller initially */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.carousel-images img.scroll-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-container button{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.footer {
+    background-color: #fdf5e6;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.footer-logo {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-logo .logo-placeholder {
+    font-size: 22px;
+    color: #333;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #555;
+}
