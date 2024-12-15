@@ -1,4 +1,4 @@
-# Velora - Timeless Elegance
+# Velora - Timeless Elegance 💎
 
 **Velora** is a stylish and elegant webpage designed to showcase and promote a collection of luxurious accessories. This project demonstrates the implementation of **HTML**, **CSS**, and **JavaScript** to create an engaging and interactive user experience.
 
@@ -26,15 +26,14 @@ An interactive carousel showcases a variety of products with smooth transitions.
 A footer includes quick links, customer support, and social media connections.
 
 ## Project Structure
-```plaintext
-project-folder/
-|
-|-- index.html            # Main HTML file
-|-- styles.css            # CSS for styling the webpage
-|-- script.js             # JavaScript for interactivity (carousel functionality, etc.)
-|-- assets/               # Folder for images and videos
-     |-- images/          # Product and background images
-     |-- videos/          # Video files
+project-folder/ 
+| 
+|-- index.html # Main HTML file 
+|-- styles.css # CSS for styling the webpage 
+|-- script.js # JavaScript for interactivity (carousel functionality, etc.) 
+|-- assets/ # Folder for images and videos 
+     |-- images/ # Product and background images 
+     |-- videos/ # Video files
 
 ## Prerequisites
 - A modern web browser (e.g., Chrome, Firefox, Edge) to view the webpage.
