@@ -12,68 +12,57 @@ function setupClones() {
     const lastImage = images[images.length - 1].cloneNode(true);
 
     carousel.appendChild(firstImage); // Clone first image to the end
-    carousel.insertBefore(lastImage, images[0]); // Clone last image to the start
+    carousel.insertBefore(lastImage, carousel.firstElementChild); // Clone last image to the start
 }
 
-// Set the initial position and calculate image width
+// Update the image width and set the initial position
 function setInitialPosition() {
     imageWidth = images[0].getBoundingClientRect().width;
+
+    // Set carousel to show the first real image
     carousel.style.transition = "none";
     carousel.style.transform = `translateX(-${imageWidth * currentIndex}px)`;
 }
 
-// Move carousel by updating transform
+// Move the carousel smoothly
 function moveCarousel() {
     carousel.style.transition = "transform 0.5s ease-in-out";
     carousel.style.transform = `translateX(-${imageWidth * currentIndex}px)`;
 }
 
-// Reset position when at a clone
+// Check for clones and reset position without transition
 function checkLoop() {
-    if (currentIndex === images.length + 1) {
+    if (currentIndex >= images.length + 1) {
+        currentIndex = 1;
         carousel.style.transition = "none";
-        currentIndex = 1; // Reset to the first real image
         carousel.style.transform = `translateX(-${imageWidth * currentIndex}px)`;
-    } else if (currentIndex === 0) {
+    } else if (currentIndex <= 0) {
+        currentIndex = images.length;
         carousel.style.transition = "none";
-        currentIndex = images.length; // Reset to the last real image
         carousel.style.transform = `translateX(-${imageWidth * currentIndex}px)`;
     }
 }
 
 // Button click listeners
 nextButton.addEventListener('click', () => {
-    currentIndex++;
-    moveCarousel();
-    setTimeout(checkLoop, 500); // Adjust after transition
+    if (currentIndex <= images.length) {
+        currentIndex++;
+        moveCarousel();
+    }
+    setTimeout(checkLoop, 500);
 });
 
 prevButton.addEventListener('click', () => {
-    currentIndex--;
-    moveCarousel();
-    setTimeout(checkLoop, 500); // Adjust after transition
+    if (currentIndex >= 1) {
+        currentIndex--;
+        moveCarousel();
+    }
+    setTimeout(checkLoop, 500);
 });
 
 // Handle window resizing
-window.addEventListener('resize', setInitialPosition);
-
-// Scroll animation logic
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
-}
-
-// Add scroll listener for pop-up effect
-window.addEventListener('scroll', () => {
-    const visibleImages = document.querySelectorAll('.carousel-images img');
-
-    visibleImages.forEach((image) => {
-        if (isInViewport(image)) {
-            image.classList.add('scroll-in');
-        } else {
-            image.classList.remove('scroll-in');
-        }
-    });
+window.addEventListener('resize', () => {
+    setInitialPosition();
 });
 
 // Initial setup
